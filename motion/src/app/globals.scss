@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$bg-neutral: #e8e2ef;
+$text-dark: #2c182d;
+$text-light: #fffdff;
+$text-neutral: #ebfbe9;
+$dark-grad-300: #0b050c;
+$bg-200: #ddc2f1;
+
+html {
+  font-family: "Raleway", sans-serif;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: $bg-200;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Afrah", sans-serif;
+  src: url("../../public/Afrah-Bold.ttf");
+}
+
+button {
+  padding: 15px 20px;
+  border-radius: 100vw;
+  border: none;
+  background: $dark-grad-300;
+  color: $text-neutral;
+  cursor: pointer;
+  transition: background 0.5s ease;
+
+  &:hover {
+    background: $text-dark;
+  }
+}

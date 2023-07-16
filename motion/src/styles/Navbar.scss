@@ -1,0 +1,77 @@
+$white-faded: rgba(255, 255, 255, 0.25);
+$text-dark: #2c182d;
+$text-comp: #dff0de;
+$text-white: #ffffff;
+$text-light: #fffdff;
+
+.nav-wrapper {
+  background: transparent;
+  // background: $text-comp;
+  //   color: $text-dark;
+  color: white;
+  mix-blend-mode:difference;
+
+  //   width: 100vw;
+  backdrop-filter: blur(5px);
+  height: 80px;
+
+  padding: 20px 40px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1.5fr 3fr 0.5fr;
+  gap: 20px;
+  z-index: 1000;
+
+
+  position: fixed;
+  // position: relative;
+  
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid $white-faded;
+
+  .nav-logo {
+    display: flex;
+    gap: 14px;
+    align-items: end;
+
+    .logo {
+      font-family: "Afrah";
+      font-size: 30px;
+    }
+
+    .text {
+      max-width: 120px;
+      font-size: 11px;
+      margin-bottom: 8px;
+      line-height: 1;
+      font-weight: 400;
+
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 70px;
+
+    .contact {
+      min-width: 100px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-weight: 500;
+    }
+  }
+
+  .search-bar {
+    * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $white-faded;
+      width: 100px;
+      padding: 10px;
+      border-radius: 100vw;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+$width: calc(100vw / 4.5);
+$text-dark: #2c182d;
+$bubble: #ede3f6;
+
+.bubble {
+  width: $width;
+  height: $width;
+  // aspect-ratio: 1;
+  background: $bubble;
+  border-radius: 50%;
+  border: 1px solid $text-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  svg {
+    width: 40%;
+  }
+
+//   &[data-left="left"] {
+//     transform: translateX(-60px);
+//   }
+
+//   &[data-up="up"] {
+//     translate: 0 -120px;
+//   }
+}
