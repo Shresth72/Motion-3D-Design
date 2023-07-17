@@ -23,17 +23,6 @@ const Bubble: FC<BubbleProps> = ({
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
 
-      // gsap.to(".diamond", {
-      //   width: "10%",
-      //   scrollTrigger: {
-      //     trigger: ".black",
-      //     // markers: true,
-      //     start: "clamp(center center+=100px)",
-      //     scrub: 1,
-      //     end: "clamp(bottom center+=100px",
-      //   },
-      // });
-      // gsap.to(".normal", {});
     });
 
     return () => ctx.revert();

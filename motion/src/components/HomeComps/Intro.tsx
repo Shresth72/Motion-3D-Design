@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import { Mesh } from "three";
 import "../../styles/Home.scss";
 
+
 const Intro = () => {
   const machineRef = useRef<Mesh>(null!);
 
@@ -42,8 +43,11 @@ const Intro = () => {
             trigger: ".intro-container",
             start: "clamp(bottom-=300 bottom)",
             scrub: 2,
+            snap: 1/2.4,
           },
         });
+
+
     });
 
     return () => ctx.revert();

@@ -23,7 +23,8 @@ $bubble: #ede3f6;
   font-family: "Afrah";
   color: $text-dark;
   width: 100vw;
-  background: radial-gradient($grad-100, $grad-200);
+  // background: radial-gradient($grad-100, $grad-200);
+  background: $bubble;
   // background: $dark-grad-300;
   // mix-blend-mode: ;
   display: flex;
@@ -287,10 +288,10 @@ $bubble: #ede3f6;
     }
 
     
-
+    
     .bubble-wrapper {
       display: grid;
-
+      height: 100vh;
       position: relative;
       grid-template-columns: repeat(7, 1fr);
       transform: translate(-7%);
@@ -306,9 +307,20 @@ $bubble: #ede3f6;
         display: flex;
         justify-content: center;
         align-items: center;
-      
+        // transition: all 1s;
       }
       
+      
+    }
+
+    .flat-grid {
+      grid-template-columns: repeat(42, 1fr);
+      align-items: end;
+      justify-content: end;
+      height: 200vh;
+      transform: translate(50%, -40%);
+      // rotate: 90deg;
+      // position: absolute;
     }
   }
 }

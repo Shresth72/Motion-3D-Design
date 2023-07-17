@@ -1,7 +1,9 @@
 import { FC } from "react";
 import Bubble from "../ui/Bubble";
 
-interface BubbleLayoutProps {}
+interface BubbleLayoutProps {
+
+}
 
 const BubbleLayout: FC<BubbleLayoutProps> = ({}) => {
     const rows = [];
