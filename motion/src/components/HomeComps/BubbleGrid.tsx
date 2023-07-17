@@ -10,8 +10,6 @@ import Flip from "gsap/dist/Flip";
 interface BubbleGridProps {}
 
 const BubbleGrid: FC<BubbleGridProps> = ({}) => {
-
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger, Flip);
@@ -35,8 +33,9 @@ const BubbleGrid: FC<BubbleGridProps> = ({}) => {
         .to(".diamond", {
           scale: 0.2,
         })
-        .to(".normal", {
-          translateY: 740,
+        .from(".bubble-text", {
+          opacity: 0,
+          y: 20,
         })
         .to(".black", {
           border: "0px",
@@ -54,21 +53,14 @@ const BubbleGrid: FC<BubbleGridProps> = ({}) => {
 
       const tl2 = gsap.timeline();
       tl2.to(".normal", {
+        translateY: 700,
+        opacity: 0,
         scrollTrigger: {
-          trigger: ".normal",
-          start: "bottom+=650 bottom",
-          end: "bottom+=650 top",
-          // toggleClass: "normal-final",
-          onEnter: () => {
-            document.querySelector(".bubble-wrapper")?.classList.add("flat-grid");
-            
-            
-          },
-          onLeaveBack: () => {
-            document.querySelector(".bubble-wrapper")?.classList.remove("flat-grid");
-          
-          },
+          trigger: ".bubble-container",
 
+          start: "center-=200 bottom",
+          end: "center-=200 center-=100",
+          scrub: 2,
         },
       });
     });
@@ -79,6 +71,7 @@ const BubbleGrid: FC<BubbleGridProps> = ({}) => {
   return (
     <div className="bubble-container">
       <BubbleLayout />
+      <div className="bubble-text">A New Standard in operation simplicity</div>
     </div>
   );
 };
