@@ -12,14 +12,14 @@ const Info = () => {
       gsap.registerPlugin(ScrollTrigger);
       gsap.defaults({ duration: 2 });
 
-      gsap.to(".info-container", {
-        y: -900,
-        scrollTrigger: {
-          trigger: ".intro-container",
-          start: "clamp(bottom-=300 bottom)",
-          scrub: 1,
-        },
-      });
+      // gsap.to(".info-container", {
+      //   y: -900,
+      //   scrollTrigger: {
+      //     trigger: ".intro-container",
+      //     start: "clamp(bottom-=300 bottom)",
+      //     scrub: 1,
+      //   },
+      // });
     });
 
     return () => ctx.revert();

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Scene from "../Canvas/MachineCanvas";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -35,6 +35,14 @@ const Intro = () => {
             pin: true,
             end: "clamp(bottom center)",
           },
+        })
+        .from(".info-container", {
+          translateY: 0,
+          scrollTrigger: {
+            trigger: ".intro-container",
+            start: "clamp(bottom-=300 bottom)",
+            scrub: 2,
+          },
         });
     });
 
@@ -58,10 +66,11 @@ const Intro = () => {
             series<span className="line"></span>
           </span>{" "}
         </h1>
-        <Scene machineRef={machineRef} />
+        {/* <Scene machineRef={machineRef} /> */}
         {/* classname Machine */}
         <h1>Discovery may alter gene function understanding.</h1>
       </div>
+      
     </div>
   );
 };

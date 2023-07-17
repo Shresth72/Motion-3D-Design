@@ -1,11 +1,10 @@
 "use client";
 
 import { FC, useEffect } from "react";
-import Bubble from "../ui/Bubble";
-import "../../styles/Bubble.scss";
 import { gsap } from "gsap";
 import "../../styles/Home.scss";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import BubbleLayout from "./BubbleLayout";
 
 interface BubbleGridProps {}
 
@@ -15,49 +14,44 @@ const BubbleGrid: FC<BubbleGridProps> = ({}) => {
       gsap.registerPlugin(ScrollTrigger);
       gsap.defaults({ duration: 1 });
 
-      gsap.to(".black", {
-        scale: 5,
-        border: "",
+      const tl = gsap.timeline();
+
+      gsap.from(".bubble-container", {
+        translateY: 0,
         scrollTrigger: {
-          trigger: ".black",
-          // markers: true,
-          start: "clamp(center center+=200px)", //400
-          scrub: 1,
-          end: "clamp(bottom center+=200)",
-        },
+          trigger: ".bubble-container",
+        scrub: 2,
+        start: "top-=900 bottom",
+        end: "center center",
+        }
+      })
+
+      tl.to(".black", {
+        scale: 8,
+      }).to(".diamond", {
+        scale: 0.2
+      }).to(".normal", {
+        translateY: 500
+      });
+
+
+      ScrollTrigger.create({
+        animation: tl,
+        trigger: ".bubble-container",
+        scrub: 2,
+        start: "top+=100 bottom",
+        end: "top+=100 center-=100",
+        markers: true,
       });
     });
 
     return () => ctx.revert();
   });
 
-  const rows = [];
-  let leftFlag = false;
-  let upFlag = false;
-  let upCount = -1;
-
-  for (let i = 0; i < 42; i++) {
-    if (i % 7 === 0) {
-      leftFlag = true;
-      upCount++;
-    }
-    if (i === 7) upFlag = true;
-    rows.push(
-      <Bubble
-        className={`${i === 17 ? "black" : "normal"}`}
-        key={i}
-        left={!leftFlag}
-        incrementLeft={7 * (i % 7)}
-        up={upFlag}
-        incrementUp={10.5 * upCount}
-      />
-    );
-    leftFlag = false;
-  }
-
   return (
     <div className="bubble-container">
-      <div className="bubble-wrapper">{rows}</div>
+      
+      <BubbleLayout />
     </div>
   );
 };

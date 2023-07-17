@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import "./globals.scss";
-import ScrollToTopOnViewportChange from "@/components/ui/ScrollOnResize";
 
 
 export const metadata = {
@@ -16,7 +15,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ScrollToTopOnViewportChange />
         <Navbar />
         {children}
       </body>

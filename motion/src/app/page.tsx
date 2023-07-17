@@ -11,7 +11,7 @@ export default function Home() {
     <div className="home-container">
       <div className="home-wrapper">
         <div className="header">Research</div>
-        <SphereCanvas className={"canvas"} />
+        {/* <SphereCanvas className={"canvas"} /> */}
       </div>
       <Intro />
       <Info />

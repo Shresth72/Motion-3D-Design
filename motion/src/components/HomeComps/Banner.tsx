@@ -12,24 +12,24 @@ const Banner = () => {
       gsap.registerPlugin(ScrollTrigger);
       gsap.defaults({ duration: 2 });
 
-      gsap.to(".banner-container", {
-        y: 1200,
-        scrollTrigger: {
-          trigger: ".banner-container",
-          // markers: true,
-          start: "clamp(bottom-=300 center+=280)",
-          scrub: 1,
-        },
-      });
-      gsap.to(".banner-container", {
-        scaleY: 0,
-        scrollTrigger: {
-          trigger: ".bubble-container",
-          // markers: true,
-          start: "clamp(top bottom+=250px)",
-          scrub: 1,
-        },
-      });
+      // gsap.to(".banner-container", {
+      //   y: 1200,
+      //   scrollTrigger: {
+      //     trigger: ".banner-container",
+      //     // markers: true,
+      //     start: "clamp(bottom-=300 center+=280)",
+      //     scrub: 1,
+      //   },
+      // });
+      // gsap.to(".banner-container", {
+      //   scaleY: 0,
+      //   scrollTrigger: {
+      //     trigger: ".bubble-container",
+      //     // markers: true,
+      //     start: "clamp(top bottom+=250px)",
+      //     scrub: 1,
+      //   },
+      // });
     });
 
     return () => ctx.revert();
