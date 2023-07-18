@@ -312,8 +312,6 @@ $bubble: #ede3f6;
       justify-content: end;
       height: 200vh;
       transform: translate(50%, -30%);
-      // rotate: 90deg;
-      // position: absolute;
     }
   }
 
@@ -338,7 +336,7 @@ $bubble: #ede3f6;
         stroke-linejoin: miter;
         stroke-opacity: 0.9;
       }
-      .first {
+      .first-anime {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -372,20 +370,52 @@ $bubble: #ede3f6;
           gap: 10px;
           position: absolute;
           bottom: 0;
-          transform: translateY(-380px);
+          transform: translateY(-580px);
           text-align: center;
-          
+
           h1 {
             font-size: 2.5rem;
           }
 
-          p{
+          p {
             max-width: 300px;
           }
         }
       }
 
-      .second {
+      .second-anime {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          stroke: $dark-grad-100;
+          fill: none;
+          stroke-width: 3;
+          stroke-linejoin: miter;
+          stroke-opacity: 0.9;
+          
+        }
+
+        .animation-text-second {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 60px;
+          gap: 10px;
+          
+          text-align: center;
+
+          h1 {
+            font-size: 2.5rem;
+          }
+
+          p {
+            max-width: 300px;
+          }
+        }
       }
     }
   }
