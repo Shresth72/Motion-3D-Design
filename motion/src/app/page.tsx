@@ -6,14 +6,12 @@ import Intro from '@/components/HomeComps/Intro'
 
 import "../styles/Home.scss"
 import InfoAnimation from '@/components/HomeComps/InfoAnimation'
+import HomeWrapper from '@/components/HomeComps/HomeWrapper'
 
 export default function Home() {
   return (
     <div className="home-container">
-      <div className="home-wrapper">
-        <div className="header">Research</div>
-        {/* <SphereCanvas className={"canvas"} /> */}
-      </div>
+      <HomeWrapper />
       <Intro />
       <Info />
       <Banner />
