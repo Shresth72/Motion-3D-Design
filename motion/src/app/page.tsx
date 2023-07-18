@@ -5,6 +5,7 @@ import Info from '@/components/HomeComps/Info'
 import Intro from '@/components/HomeComps/Intro'
 
 import "../styles/Home.scss"
+import InfoAnimation from '@/components/HomeComps/InfoAnimation'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Info />
       <Banner />
       <BubbleGrid />
+      <InfoAnimation />
     </div>
   )
 }

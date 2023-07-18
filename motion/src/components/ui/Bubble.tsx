@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { gsap } from "gsap";
 import { FC, useEffect } from "react";
@@ -19,15 +19,6 @@ const Bubble: FC<BubbleProps> = ({
   incrementLeft,
   incrementUp,
 }) => {
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.registerPlugin(ScrollTrigger);
-
-    });
-
-    return () => ctx.revert();
-  });
-
   return (
     <div
       className={`bubble ${className}`}

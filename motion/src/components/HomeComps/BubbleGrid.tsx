@@ -57,7 +57,6 @@ const BubbleGrid: FC<BubbleGridProps> = ({}) => {
         opacity: 0,
         scrollTrigger: {
           trigger: ".bubble-container",
-
           start: "center-=200 bottom",
           end: "center-=200 center-=100",
           scrub: 2,
