@@ -26,7 +26,7 @@ const FirstAnime: FC<FirstAnimeProps> = ({}) => {
         trigger: ".animation-container",
         end: "center top+=400",
         start: "top bottom",
-        // markers: true,
+        
         scrub: 3,
       });
     });
