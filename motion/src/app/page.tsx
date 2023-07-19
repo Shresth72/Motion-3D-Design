@@ -1,4 +1,3 @@
-import SphereCanvas from "@/components/canvas/SphereCanvas";
 import Banner from "@/components/HomeComps/Banner";
 import BubbleGrid from "@/components/HomeComps/BubbleGrid";
 import Info from "@/components/HomeComps/Info";
