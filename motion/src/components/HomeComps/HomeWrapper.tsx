@@ -1,6 +1,6 @@
 "use client";
 
-import SphereCanvas from "../canvas/SphereCanvas";
+import SphereCanvas from "../CanvasComps/sphere-canvas";
 import { FC, useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";

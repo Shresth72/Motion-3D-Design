@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { SceneMesh } from "./MachineMesh";
+import { SceneMesh } from "./number-mesh";
 import { FC, Ref } from "react";
 import { Mesh } from "three";
 

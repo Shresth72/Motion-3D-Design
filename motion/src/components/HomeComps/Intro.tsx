@@ -1,5 +1,5 @@
 "use client";
-import Scene from "../canvas/MachineCanvas";
+import Scene from "../CanvasComps/number-canvas";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";

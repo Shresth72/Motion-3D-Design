@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { FC } from "react";
 
-import SphereGeomentry from "./SphereGeometry";
+import SphereGeomentry from "./sphere-geometry";
 
 interface SphereProps {
   className: string;
