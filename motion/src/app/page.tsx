@@ -1,12 +1,12 @@
-import SphereCanvas from '@/components/Canvas/SphereCanvas'
-import Banner from '@/components/HomeComps/Banner'
-import BubbleGrid from '@/components/HomeComps/BubbleGrid'
-import Info from '@/components/HomeComps/Info'
-import Intro from '@/components/HomeComps/Intro'
+import SphereCanvas from "@/components/canvas/SphereCanvas";
+import Banner from "@/components/HomeComps/Banner";
+import BubbleGrid from "@/components/HomeComps/BubbleGrid";
+import Info from "@/components/HomeComps/Info";
+import Intro from "@/components/HomeComps/Intro";
 
-import "../styles/Home.scss"
-import InfoAnimation from '@/components/HomeComps/InfoAnimation'
-import HomeWrapper from '@/components/HomeComps/HomeWrapper'
+import "../styles/Home.scss";
+import InfoAnimation from "@/components/HomeComps/InfoAnimation";
+import HomeWrapper from "@/components/HomeComps/HomeWrapper";
 
 export default function Home() {
   return (
@@ -18,5 +18,5 @@ export default function Home() {
       <BubbleGrid />
       <InfoAnimation />
     </div>
-  )
+  );
 }

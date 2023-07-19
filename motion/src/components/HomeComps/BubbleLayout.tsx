@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Bubble from "../ui/Bubble";
+import Bubble from "../ui/bubble";
 
 interface BubbleLayoutProps {
 

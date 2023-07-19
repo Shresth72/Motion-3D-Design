@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import Button from "../ui/Button";
+import Button from "../ui/buttonPurple";
 import { gsap } from "gsap";
 import "../../styles/Home.scss";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";

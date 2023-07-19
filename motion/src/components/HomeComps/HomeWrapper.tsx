@@ -1,6 +1,6 @@
 "use client";
 
-import SphereCanvas from "../Canvas/SphereCanvas";
+import SphereCanvas from "../canvas/SphereCanvas";
 import { FC, useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -8,7 +8,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 interface HomeWrapperProps {}
 
 const HomeWrapper: FC<HomeWrapperProps> = ({}) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -21,7 +21,7 @@ const HomeWrapper: FC<HomeWrapperProps> = ({}) => {
           setIsVisible(false);
         },
         onLeaveBack: () => {
-          setIsVisible(true);
+          setIsVisible(false);
         },
       });
     });

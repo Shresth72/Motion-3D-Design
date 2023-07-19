@@ -1,11 +1,10 @@
 "use client";
-import Scene from "../Canvas/MachineCanvas";
+import Scene from "../canvas/MachineCanvas";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { Mesh } from "three";
 import "../../styles/Home.scss";
-
 
 const Intro = () => {
   const machineRef = useRef<Mesh>(null!);
@@ -43,11 +42,9 @@ const Intro = () => {
             trigger: ".intro-container",
             start: "clamp(bottom-=300 bottom)",
             scrub: 2,
-            snap: 1/2.4,
+            snap: 1 / 2.4,
           },
         });
-
-
     });
 
     return () => ctx.revert();
@@ -74,7 +71,6 @@ const Intro = () => {
         {/* classname Machine */}
         <h1>Discovery may alter gene function understanding.</h1>
       </div>
-      
     </div>
   );
 };
