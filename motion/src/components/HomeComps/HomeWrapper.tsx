@@ -31,7 +31,7 @@ const HomeWrapper: FC<HomeWrapperProps> = ({}) => {
   return (
     <div className="home-wrapper">
       <div className="header">Research</div>
-      {isVisible && <SphereCanvas className={"canvas"} id="canvas" />}
+      {isVisible && <SphereCanvas className={"canvas"} />}
     </div>
   );
 };

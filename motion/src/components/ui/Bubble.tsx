@@ -1,8 +1,4 @@
-"use client";
-
-import { gsap } from "gsap";
-import { FC, useEffect } from "react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { FC } from "react";
 
 interface BubbleProps {
   left: boolean;

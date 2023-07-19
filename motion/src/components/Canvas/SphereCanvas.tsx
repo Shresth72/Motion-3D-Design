@@ -7,12 +7,11 @@ import SphereGeomentry from "./SphereGeometry";
 
 interface SphereProps {
   className: string;
-  id: string;
 }
 
-const SphereCanvas: FC<SphereProps> = ({ className, id }) => {
+const SphereCanvas: FC<SphereProps> = ({ className }) => {
   return (
-    <Canvas className={className} camera={{ fov: 25 }} id={id}>
+    <Canvas className={className} camera={{ fov: 25 }}>
       <ambientLight />
       <pointLight position={[40, 40, 40]} intensity={8} />
       <SphereGeomentry
