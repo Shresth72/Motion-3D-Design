@@ -1,8 +1,9 @@
 import { FC } from "react";
-import Bubble from "../ui/bubble";
-interface BubbleLayoutProps {}
+import Bubble from "./BubbleElements";
 
-const BubbleLayout: FC<BubbleLayoutProps> = ({}) => {
+interface BubbleArrayProps {}
+
+const BubbleArray: FC<BubbleArrayProps> = ({}) => {
   const rows = [];
   let leftFlag = false;
   let upFlag = false;
@@ -30,4 +31,4 @@ const BubbleLayout: FC<BubbleLayoutProps> = ({}) => {
   return <div className="bubble-wrapper">{rows}</div>;
 };
 
-export default BubbleLayout;
+export default BubbleArray;

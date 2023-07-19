@@ -4,7 +4,7 @@ import { FC, useEffect } from "react";
 import { gsap } from "gsap";
 import "../../styles/Home.scss";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import BubbleLayout from "./BubbleLayout";
+import BubbleArray from "./BubbleArray";
 import Flip from "gsap/dist/Flip";
 
 interface BubbleGridProps {}
@@ -69,7 +69,7 @@ const BubbleGrid: FC<BubbleGridProps> = ({}) => {
 
   return (
     <div className="bubble-container">
-      <BubbleLayout />
+      <BubbleArray />
       <div className="bubble-text">A New Standard in operation simplicity</div>
     </div>
   );
