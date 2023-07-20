@@ -15,11 +15,9 @@ const FirstAnime: FC<FirstAnimeProps> = ({}) => {
 
       tl.from(".animation-circle-first", {
         scale: 0,
-      })
-        .from(".animation-line", {
-          attr: { y2: -1 },
-        })
-        
+      }).from(".animation-line", {
+        attr: { y2: -1 },
+      });
 
       ScrollTrigger.create({
         animation: tl,
@@ -98,6 +96,7 @@ const FirstAnime: FC<FirstAnimeProps> = ({}) => {
       <div className="animation-text">
         <h1>Manage Workflow</h1>
         <p>Track samples and manage your runs with manual or automated LIMS</p>
+        <p className="title-1">1</p>
       </div>
     </div>
   );

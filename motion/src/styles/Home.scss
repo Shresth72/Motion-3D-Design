@@ -323,6 +323,12 @@ $bubble: #ede3f6;
     position: relative;
     z-index: 200;
 
+    p {
+      max-width: 300px;
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+    }
+
     .animation-wrapper {
       display: flex;
       flex-direction: column;
@@ -371,24 +377,31 @@ $bubble: #ede3f6;
           gap: 10px;
           position: absolute;
           bottom: 0;
-          transform: translateY(-640px);
+          transform: translateY(-379px);
           text-align: center;
 
           h1 {
             font-size: 2.5rem;
           }
 
-          p {
-            max-width: 300px;
+          
+
+          .title-1 {
+            position: absolute;
+            transform: translateY(106px);
+            bottom: 0;
+            font-size: 1.5rem;
           }
         }
       }
 
       .second-anime {
         display: flex;
+        margin-top: 0;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        transform: translateY(-100px);
 
         svg {
           stroke: $dark-grad-100;
@@ -396,7 +409,10 @@ $bubble: #ede3f6;
           stroke-width: 3;
           stroke-linejoin: miter;
           stroke-opacity: 0.9;
-          
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
         }
 
         .animation-text-second {
@@ -406,15 +422,19 @@ $bubble: #ede3f6;
           flex-direction: column;
           margin-top: 60px;
           gap: 10px;
-          
+
           text-align: center;
 
           h1 {
             font-size: 2.5rem;
           }
 
-          p {
-            max-width: 300px;
+          
+
+          .title-2 {
+            position: absolute;
+            font-size: 1.5rem;
+            transform: translateY(-163px);
           }
         }
       }

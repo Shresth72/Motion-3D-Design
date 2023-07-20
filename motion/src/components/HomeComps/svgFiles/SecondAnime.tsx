@@ -13,15 +13,34 @@ const SecondAnime: FC<SecondAnimeProps> = ({}) => {
 
       const tl = gsap.timeline();
 
-      tl.from(".animation-circle-second", {
-        scale: 0,
-      })
+      tl.from(".second-anime", {
+        x: 400,
+        y: 100,
+      }).from(
+        ".animation-circle-second",
+        {
+          scale: 0,
+        },
+        "<"
+      );
+
+      gsap.to(".first-anime", {
+        y: -200,
+        x: -400,
+        scrollTrigger: {
+          trigger: ".second-anime",
+          end: "top-=50 center+=100",
+          start: "top bottom",
+          // markers: true,
+          scrub: 3,
+        },
+      });
 
       ScrollTrigger.create({
         animation: tl,
         trigger: ".second-anime",
-        end: "center top",
-        start: "top bottom-=100",
+        end: "center center+=100",
+        start: "top bottom",
         // markers: true,
         scrub: 3,
       });
@@ -41,6 +60,7 @@ const SecondAnime: FC<SecondAnimeProps> = ({}) => {
         <circle cx="50" cy="50" r="48.5" />
       </svg>
       <div className="animation-text-second">
+        <p className="title-2">2</p>
         <h1>Prepare Libraries</h1>
         <p>Access a broad range of high performance library preparation kits</p>
       </div>
