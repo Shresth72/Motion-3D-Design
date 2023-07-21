@@ -17,9 +17,22 @@ $width: calc(100vw / 4.5);
 $text-dark: #2c182d;
 $bubble: #ede3f6;
 
-.home-container {
-  padding: 80px 40px;
+//Realtime colors
+$text-100: #050505;
+$background-100: #fafafa;
+$primary-100: #ffe273;
+$secondary-100: #ffccd5;
+$accent-100: #e11e7c;
 
+//2
+$text-200: #050505;
+$background-200: #fafafa;
+$primary-200: #ffdb4d;
+$secondary-200: #ffb3c1;
+$accent-200: #87124b;
+
+.home-container {
+  padding: 80px 40px 0 40px;
   font-family: "Afrah";
   color: $text-dark;
   width: 100vw;
@@ -45,6 +58,16 @@ $bubble: #ede3f6;
       font-weight: 600;
     }
 
+    .hero-scene {
+      margin: 0;
+      transform: translate(0,-240px);
+      // // border: 2px solid black;
+      // width: 50vw;
+      // height: 60vh;
+      position: relative;
+      // z-index: 1200;
+    }
+
     .canvas {
       transform: translateY(20px);
       position: relative;
@@ -55,7 +78,7 @@ $bubble: #ede3f6;
 
   .intro-container {
     color: white;
-    margin-top: 200px;
+    margin-top: 0;
     // transform: translateY(80px);
     width: 100vw;
     height: 1700px;
@@ -377,7 +400,7 @@ $bubble: #ede3f6;
           gap: 10px;
           position: absolute;
           bottom: 0;
-          transform: translateY(-379px);
+          transform: translateY(-640px);
           text-align: center;
 
           h1 {
@@ -401,7 +424,7 @@ $bubble: #ede3f6;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transform: translateY(-100px);
+       
 
         svg {
           stroke: $dark-grad-100;

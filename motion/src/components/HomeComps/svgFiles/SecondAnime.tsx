@@ -14,8 +14,8 @@ const SecondAnime: FC<SecondAnimeProps> = ({}) => {
       const tl = gsap.timeline();
 
       tl.from(".second-anime", {
-        x: 400,
-        y: 100,
+        // x: 400,
+        // y: 100,
       }).from(
         ".animation-circle-second",
         {
@@ -24,17 +24,17 @@ const SecondAnime: FC<SecondAnimeProps> = ({}) => {
         "<"
       );
 
-      gsap.to(".first-anime", {
-        y: -200,
-        x: -400,
-        scrollTrigger: {
-          trigger: ".second-anime",
-          end: "top-=50 center+=100",
-          start: "top bottom",
-          // markers: true,
-          scrub: 3,
-        },
-      });
+      // gsap.to(".first-anime", {
+      //   y: -200,
+      //   x: -400,
+      //   scrollTrigger: {
+      //     trigger: ".second-anime",
+      //     end: "top-=50 center+=100",
+      //     start: "top bottom",
+      //     // markers: true,
+      //     scrub: 1,
+      //   },
+      // });
 
       ScrollTrigger.create({
         animation: tl,
@@ -42,7 +42,7 @@ const SecondAnime: FC<SecondAnimeProps> = ({}) => {
         end: "center center+=100",
         start: "top bottom",
         // markers: true,
-        scrub: 3,
+        scrub: 1,
       });
     });
 

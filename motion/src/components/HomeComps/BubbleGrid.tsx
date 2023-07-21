@@ -44,7 +44,7 @@ const BubbleGrid: FC<BubbleGridProps> = ({}) => {
       ScrollTrigger.create({
         animation: tl,
         trigger: ".bubble-container",
-        scrub: 3,
+        scrub: 1,
         start: "top+=100 bottom",
         end: "top+=100 center-=100",
         // markers: true,
