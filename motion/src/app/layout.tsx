@@ -21,7 +21,7 @@ export default async function RootLayout({
     <ClerkProvider >
       <html lang="en">
         <body>
-          <Navbar user={user} />
+          
           {children}
         </body>
       </html>

@@ -1,6 +1,7 @@
 import { type Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import "../../../styles/SignIn.scss";
 
 import { currentUser } from "@clerk/nextjs";
 
@@ -25,10 +26,13 @@ export default async function SignInPage() {
   if (user) redirect("/");
 
   return (
-    <Shell style={{marginTop: "80px"}}>
+    <Shell className="signin-container">
       <Card>
+        <Link className="back-link" href="/">
+          Back
+        </Link>
         <CardHeader>
-          <CardTitle>Sign in</CardTitle>
+          <CardTitle className="card-title">Sign in</CardTitle>
           <CardDescription>
             Choose your preferred sign in method
           </CardDescription>
@@ -40,7 +44,7 @@ export default async function SignInPage() {
               <span />
             </div>
             <div>
-              <span>Or continye with</span>
+              <span>Or continue with</span>
             </div>
           </div>
           <SignInForm />
@@ -52,13 +56,6 @@ export default async function SignInPage() {
               Sign up
             </Link>
           </div>
-          <Link
-            href="/signin/reset-password"
-            aria-label="Reset password"
-            className=""
-          >
-            Reset password
-          </Link>
         </CardFooter>
       </Card>
     </Shell>

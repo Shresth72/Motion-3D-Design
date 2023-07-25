@@ -7,6 +7,7 @@ import { toast } from "sonner";
 
 import { Button } from "../ui/buttonSlot";
 import { Icons } from "../ui/icons";
+import "../../styles/SignIn.scss";
 
 const oauthProviders = [
   { name: "Google", strategy: "oauth_google", icon: "google" },
@@ -43,7 +44,7 @@ export function OAuthSignIn() {
   }
 
   return (
-    <div>
+    <div className="auth-container">
       {oauthProviders.map((provider) => {
         const Icon = Icons[provider.icon];
 
@@ -51,14 +52,16 @@ export function OAuthSignIn() {
           <Button
             aria-label={`Sign in with ${provider.name}`}
             key={provider.strategy}
-            className=""
+            className={`Button-auth ${
+              isLoading === provider.strategy ? "disabled" : ""
+            }`}
             onClick={() => void oauthSignIn(provider.strategy)}
             disabled={isLoading !== null}
           >
             {isLoading === provider.strategy ? (
-              <Icons.spinner aria-hidden="true" />
+              <Icons.spinner className="Spinner" aria-hidden="true" />
             ) : (
-              <Icon aria-hidden="true" />
+              <Icon className="Icon" aria-hidden="true" />
             )}
             {provider.name}
           </Button>

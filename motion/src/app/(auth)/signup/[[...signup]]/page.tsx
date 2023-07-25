@@ -59,9 +59,20 @@
 //   );
 // }
 import { SignUp } from "@clerk/nextjs";
+import "../../../../styles/SignIn.scss";
 
-const SignUpPage = () => (
-  <SignUp path="/signup" routing="path" signInUrl="/signin" redirectUrl="/" />
-);
+const SignUpPage = () => {
+  return (
+    <div className="signup-container">
+      
+      <SignUp
+        path="/signup"
+        routing="path"
+        signInUrl="/signin"
+        redirectUrl="/"
+      />
+    </div>
+  );
+};
 
 export default SignUpPage;

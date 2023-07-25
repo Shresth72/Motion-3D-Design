@@ -6,6 +6,7 @@ import { useSignIn } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import type { z } from "zod";
+import "../../styles/SignIn.scss";
 
 import { catchClerkError } from "@/lib/utils";
 import { authSchema } from "@/lib/validation/auth";
@@ -61,20 +62,17 @@ export function SignInForm() {
 
   return (
     <Form {...form}>
-      <form
-        className="grid gap-4"
-        onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
-      >
+      <form className="grid gap-4 form-container" onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}>
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
+            <FormItem className="form-item">
+              <FormLabel className="form-label">Email</FormLabel>
               <FormControl>
-                <Input placeholder="megadeth180@gmail.com" {...field} />
+                <Input className="input" placeholder="megadeth180@gmail.com" {...field} />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="form-message" />
             </FormItem>
           )}
         />
@@ -82,16 +80,16 @@ export function SignInForm() {
           control={form.control}
           name="password"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Password</FormLabel>
+            <FormItem className="password-container form-item">
+              <FormLabel className="form-label">Password</FormLabel>
               <FormControl>
-                <PasswordInput placeholder="**********" {...field} />
+                <PasswordInput className="input" placeholder="**********" {...field} />
               </FormControl>
-              <FormMessage />
+              <FormMessage className="form-message" />
             </FormItem>
           )}
         />
-        <Button disabled={isPending}>
+        <Button className={`button ${isPending ? 'disabled' : ''}`} disabled={isPending}>
           {/* {isPending && (
             <Icons.spinner
               className="mr-2 h-4 w-4 animate-spin"
