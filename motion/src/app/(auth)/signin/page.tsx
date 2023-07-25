@@ -25,7 +25,7 @@ export default async function SignInPage() {
   if (user) redirect("/");
 
   return (
-    <Shell>
+    <Shell style={{marginTop: "80px"}}>
       <Card>
         <CardHeader>
           <CardTitle>Sign in</CardTitle>

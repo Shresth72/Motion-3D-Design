@@ -1,22 +1,22 @@
 export const data = [
   {
     id: "info_1",
-    title: "Output Range",
-    storage: "~240Gb - 32Tb",
+    title: "Number Nook",
+    storage: "Unraveling the Wonders of Numbers",
   },
   {
     id: "info_2",
-    title: "Single mode per run",
-    storage: "16 billion - 53 billion",
+    title: "Mathematical Puzzlers",
+    storage: "Challenge Your Mind with Mind-Boggling Math Puzzles",
   },
   {
     id: "info_3",
-    title: "Read length",
-    storage: "2 x 150bp",
+    title: "Math-o-Mania",
+    storage: "Step Right Up to a Fun-Filled Math Carnival",
   },
   {
     id: "info_4",
-    title: "Run Time",
-    storage: "~13hr - 48hr",
+    title: "Real-Life Math Explorations",
+    storage: "Experience Math Beyond the Classroom",
   },
 ];

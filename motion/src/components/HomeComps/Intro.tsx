@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { Mesh } from "three";
 import "../../styles/Home.scss";
+import Spline from "@splinetool/react-spline";
 
 const Intro = () => {
   const machineRef = useRef<Mesh>(null!);
@@ -42,7 +43,6 @@ const Intro = () => {
             trigger: ".intro-container",
             start: "clamp(bottom-=300 bottom)",
             scrub: 2,
-            snap: 1 / 2.4,
           },
         });
     });
@@ -55,21 +55,20 @@ const Intro = () => {
       <div className="intro-wrapper">
         <div className="intro-bg"></div>
         <h1 className="top">
-          Unleash your ambitions by{" "}
+          Your Gateway to Fun{" "}
           <span>
-            maximizing<span className="line"></span>
+            Mathematics<span className="line"></span>
           </span>{" "}
-          throughput
+          and the World of Numbers!
         </h1>
         <h1 className="series">
-          Cicada XI{" "}
+        Exciting journey where {" "}
           <span>
-            series<span className="line"></span>
-          </span>{" "}
+          numbers<span className="line"></span>
+          </span>{" "} come alive.
         </h1>
-        {/* <Scene machineRef={machineRef} /> */}
-        {/* classname Machine */}
-        <h1>Discovery may alter gene function understanding.</h1>
+        <div className="machine"><Spline scene="https://prod.spline.design/LgzlHFhdPkBFudR5/scene.splinecode" /></div>
+        <h1>Dive in and unlock the magic of mathematics together!</h1>
       </div>
     </div>
   );

@@ -42,7 +42,7 @@ const Banner = () => {
           <path d="M567.27 267.179C325.796 109.936 88.221 -18.0429 0 8.84968V267.179H1284V8.84968C1078.51 -46.3276 822.799 198.805 720.629 267.179C713.041 251.887 699.549 203.902 643.897 200C599.376 196.878 574.262 243.485 567.27 267.179Z" />
         </svg>
 
-        <div className="logo">Ci</div>
+        <div className="logo">Ns</div>
         <div className="text">
           <h1>
             Gain access to cutting-edge genome{" "}

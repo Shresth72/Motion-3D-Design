@@ -19,12 +19,10 @@ const Navbar: FC<NavbarProps> = ({ user }) => {
   return (
     <div className="nav-wrapper">
       <div className="nav-logo">
-        <div className="logo">Cicada.</div>
-        <div className="text">the - genomics products</div>
+        <Link href="/" className="logo">NumberScape</Link>
+        <div className="text">fun - math odyssey</div>
       </div>
-      <div className="search-bar">
-        <div>Search</div>
-      </div>
+      
       <div className="nav-links">
         <div className="contact">Get in touch</div>
         {/* <div className="hamburger">o</div> */}

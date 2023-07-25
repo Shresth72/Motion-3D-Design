@@ -16,9 +16,9 @@ $text-light: #fffdff;
   height: 80px;
 
   padding: 20px 40px;
-  display: grid;
+  display: flex;
   align-items: center;
-  grid-template-columns: 1.5fr 3fr 0.5fr;
+  justify-content: space-between;
   gap: 20px;
   z-index: 1000;
 
@@ -39,10 +39,12 @@ $text-light: #fffdff;
     .logo {
       font-family: "Afrah";
       font-size: 30px;
+      text-decoration: none;
+      color: white;
     }
 
     .text {
-      max-width: 120px;
+      max-width: 80px;
       font-size: 11px;
       margin-bottom: 8px;
       line-height: 1;

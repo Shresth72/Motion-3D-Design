@@ -28,12 +28,12 @@ const Info = () => {
   return (
     <div className="info-container">
       <div className="wrapper">
-        <h1>Cicada XI Series</h1>
+        <h1>Topics</h1>
         <div className="list">
           {data.map((info) => (
             <div key={info.id}>
-              <p>{info.title}</p>
-              <h2>{info.storage}</h2>
+              <p>{info.storage}</p>
+              <h2>{info.title}</h2>
             </div>
           ))}
         </div>
