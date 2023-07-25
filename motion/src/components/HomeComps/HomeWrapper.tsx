@@ -34,7 +34,7 @@ const HomeWrapper: FC<HomeWrapperProps> = ({}) => {
   return (
     <div className="home-wrapper">
       {/* <div className="header">Research</div> */}
-      {/* <Spline className="hero-scene" style={{display: `${isVisible === true ? "": "none"}`}} scene="https://prod.spline.design/xjmD3Hcj756E3i5r/scene.splinecode" /> */}
+      <Spline className="hero-scene" style={{display: `${isVisible === true ? "": "none"}`}} scene="https://prod.spline.design/xjmD3Hcj756E3i5r/scene.splinecode" />
      
     </div>
   );
