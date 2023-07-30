@@ -11,7 +11,6 @@ $dark-grad-600: #8a7596;
 $text-dark: #2c182d;
 $text-light: #fffdff;
 
-
 $width: calc(100vw / 4.5);
 $text-dark: #2c182d;
 $bubble: #ede3f6;
@@ -40,7 +39,7 @@ $accent-200: #09090d;
   .home-wrapper {
     width: 100vw;
     display: flex;
-    height: 1000px;
+    height: 800px;
     // flex-direction: column;
     max-height: 1000px;
     align-items: start;
@@ -56,10 +55,6 @@ $accent-200: #09090d;
     .hero-scene {
       margin: 0;
       transform: translate(0, -240px);
-      // // border: 2px solid black;
-      // width: 50vw;
-      // height: 60vh;
-
       position: relative;
       z-index: 900;
     }
@@ -104,6 +99,62 @@ $accent-200: #09090d;
         }
       }
     }
+
+    @media (max-width: 768px) {
+      // flex-direction: column;
+      height: auto;
+      margin-bottom: 80px;
+
+      .header {
+        font-size: 30px;
+      }
+
+      .hero-scene {
+        transform: translate(0, -120px);
+      }
+
+      .canvas {
+        transform: none;
+      }
+
+      .home-svg-left,
+      .home-svg-right {
+        display: none;
+
+      }
+
+      .logo-wrapper {
+        .logo {
+          width: 77vw;
+        }
+      }
+    }
+
+    // Additional responsive styles for screen widths greater than 768px (e.g., tablets and larger)
+    @media (min-width: 769px) {
+      .header {
+        font-size: 40px;
+      }
+
+      .hero-scene {
+        transform: translate(0, -240px);
+      }
+
+      .canvas {
+        transform: translateY(20px);
+      }
+
+      .home-svg-left,
+      .home-svg-right {
+        width: 22vw;
+      }
+
+      .logo-wrapper {
+        .logo {
+          width: 29vw;
+        }
+      }
+    }
   }
 
   .intro-container {
@@ -128,6 +179,7 @@ $accent-200: #09090d;
 
       text-align: center;
 
+     
       .intro-bg {
         position: absolute;
         z-index: 1;
@@ -152,9 +204,10 @@ $accent-200: #09090d;
       h1 {
         position: relative;
         z-index: 3;
-        max-width: 300px;
-        font-size: 35px;
-        // mix-blend-mode: difference;
+        max-width: 360px;
+        font-size: 28px;
+        
+        
 
         span {
           position: relative;
@@ -162,7 +215,7 @@ $accent-200: #09090d;
           .line {
             width: 105%;
             height: 1px;
-            background: $text-light;
+            background: $background-200;
             position: absolute;
             transform: rotateZ(-2deg) translateX(-3px);
             bottom: 0;

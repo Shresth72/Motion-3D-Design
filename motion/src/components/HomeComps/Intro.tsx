@@ -55,23 +55,24 @@ const Intro = () => {
       <div className="intro-wrapper">
         <div className="intro-bg"></div>
         <h1 className="top">
-          Your Gateway to Fun{" "}
+          Where art and motion converge to create a{" "}
           <span>
-            Mathematics<span className="line"></span>
+            symphony<span className="line"></span>
           </span>{" "}
-          and the World of Numbers!
+          of visual marvels!
         </h1>
         <h1 className="series">
-          Exciting journey where{" "}
+        Our talented team brings{" "}
           <span>
-            numbers<span className="line"></span>
+          ideas<span className="line"></span>
           </span>{" "}
-          come alive.
+          to life.
         </h1>
         <div className="machine">
           {/* <Spline scene="https://prod.spline.design/LgzlHFhdPkBFudR5/scene.splinecode" /> */}
         </div>
-        <h1>Dive in and unlock the magic of mathematics together!</h1>
+        <h1>Explore successful ad campaigns that leverage the magic of motion design to stand out in a crowded market.</h1>
+        
       </div>
     </div>
   );

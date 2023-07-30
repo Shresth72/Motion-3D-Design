@@ -5,38 +5,27 @@ $text-white: #ffffff;
 $text-light: #fffdff;
 
 .nav-wrapper {
+  // Common styles for all screen sizes
   background: none;
-  // background: $text-comp;
-  //   color: $text-dark;
   color: white;
-  
-
-  //   width: 100vw;
-  backdrop-filter: blur(5px);
   height: 70px;
-
   padding: 15px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   z-index: 1000;
-
-
   position: fixed;
-  // position: relative;
-  
   top: 0;
   left: 0;
   right: 0;
   border-bottom: 1px solid $white-faded;
-  mix-blend-mode:difference;
+  mix-blend-mode: difference;
 
   .nav-logo {
     display: flex;
     gap: 14px;
-    align-items: end;
-    
+    align-items: center;
 
     .logo {
       font-family: "Akira";
@@ -48,16 +37,15 @@ $text-light: #fffdff;
     .text {
       max-width: 80px;
       font-size: 11px;
-      margin-bottom: 8px;
       line-height: 1;
       font-weight: 400;
-
     }
   }
 
   .nav-links {
     display: flex;
     gap: 70px;
+    align-items: center;
 
     .contact {
       font-family: "Akira";
@@ -65,26 +53,55 @@ $text-light: #fffdff;
       text-decoration: underline;
       text-underline-offset: 4px;
       font-weight: 500;
-      transform: translateY(6px);
     }
 
     .signin {
       position: relative;
-      z-index: -1;
       mix-blend-mode: normal;
     }
   }
 
-  .search-bar {
-    * {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid $white-faded;
-      width: 100px;
-      padding: 10px;
-      border-radius: 100vw;
+  // Responsive styles for screen widths less than or equal to 768px (e.g., mobile devices)
+  @media (max-width: 768px) {
+    align-items: center;
+
+    .nav-logo {
       
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .text {
+        display: none;
+      }
+    }
+
+    .nav-links {
+      flex-direction: column;
+
+      gap: 15px;
+
+      .contact {
+        display: none;
+      }
+    }
+  }
+
+  // Additional responsive styles for screen widths greater than 768px (e.g., tablets and larger)
+  @media (min-width: 769px) {
+    .nav-logo {
+      .logo {
+        font-size: 30px;
+      }
+
+      .text {
+        display: block;
+      }
+    }
+
+    .nav-links {
+      flex-direction: row;
     }
   }
 }
