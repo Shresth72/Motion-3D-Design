@@ -3,6 +3,7 @@ import "../../styles/Navbar.scss";
 import Link from "next/link";
 import type { User } from "@clerk/nextjs/dist/types/server";
 import { Icons } from "../ui/icons";
+import { SignedIn, UserButton, SignedOut, SignInButton } from "@clerk/nextjs";
 
 interface NavbarProps {
   user: User | null;
@@ -19,26 +20,21 @@ const Navbar: FC<NavbarProps> = ({ user }) => {
   return (
     <div className="nav-wrapper">
       <div className="nav-logo">
-        <Link href="/" className="logo">NumberScape</Link>
-        <div className="text">fun - math odyssey</div>
+        <Link href="/" className="logo">
+          MotionWaves
+        </Link>
+        <div className="text">unleash - creative surges</div>
       </div>
-      
+
       <div className="nav-links">
-        <div className="contact">Get in touch</div>
-        {/* <div className="hamburger">o</div> */}
-        {user ? (
-          <Link href="/signout">
-            <Icons.logout className="mr-2 h-4 w-4" aria-hidden="true" />
-            Log out
-          </Link>
-        ) : (
-          <Link href="/signin">
-            <div>
-              Sign In
-              
-            </div>
-          </Link>
-        )}
+      <div className="contact">Get in touch</div>
+      <div className="signin">
+        <SignedIn>
+          <UserButton afterSignOutUrl="/" />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut></div>
       </div>
     </div>
   );

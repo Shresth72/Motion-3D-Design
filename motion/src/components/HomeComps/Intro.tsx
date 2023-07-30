@@ -41,7 +41,7 @@ const Intro = () => {
           translateY: 0,
           scrollTrigger: {
             trigger: ".intro-container",
-            start: "clamp(bottom-=300 bottom)",
+            start: "clamp(bottom-=400 bottom)",
             scrub: 2,
           },
         });
@@ -62,12 +62,15 @@ const Intro = () => {
           and the World of Numbers!
         </h1>
         <h1 className="series">
-        Exciting journey where {" "}
+          Exciting journey where{" "}
           <span>
-          numbers<span className="line"></span>
-          </span>{" "} come alive.
+            numbers<span className="line"></span>
+          </span>{" "}
+          come alive.
         </h1>
-        <div className="machine"><Spline scene="https://prod.spline.design/LgzlHFhdPkBFudR5/scene.splinecode" /></div>
+        <div className="machine">
+          {/* <Spline scene="https://prod.spline.design/LgzlHFhdPkBFudR5/scene.splinecode" /> */}
+        </div>
         <h1>Dive in and unlock the magic of mathematics together!</h1>
       </div>
     </div>

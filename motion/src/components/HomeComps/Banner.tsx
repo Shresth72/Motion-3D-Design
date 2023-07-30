@@ -16,7 +16,7 @@ const Banner = () => {
 
       tl.from(".crown", {
         scaleY: 1.5,
-        y: -480,
+        y: -434,
         // transform: "translate(-10px, -418px) rotate3d(0,0,0,0)",
         scrollTrigger: {
           // markers: true,

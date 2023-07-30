@@ -5,17 +5,17 @@ $text-white: #ffffff;
 $text-light: #fffdff;
 
 .nav-wrapper {
-  background: transparent;
+  background: none;
   // background: $text-comp;
   //   color: $text-dark;
   color: white;
-  mix-blend-mode:difference;
+  
 
   //   width: 100vw;
   backdrop-filter: blur(5px);
-  height: 80px;
+  height: 70px;
 
-  padding: 20px 40px;
+  padding: 15px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,14 +30,16 @@ $text-light: #fffdff;
   left: 0;
   right: 0;
   border-bottom: 1px solid $white-faded;
+  mix-blend-mode:difference;
 
   .nav-logo {
     display: flex;
     gap: 14px;
     align-items: end;
+    
 
     .logo {
-      font-family: "Afrah";
+      font-family: "Akira";
       font-size: 30px;
       text-decoration: none;
       color: white;
@@ -58,10 +60,18 @@ $text-light: #fffdff;
     gap: 70px;
 
     .contact {
+      font-family: "Akira";
       min-width: 100px;
       text-decoration: underline;
       text-underline-offset: 4px;
       font-weight: 500;
+      transform: translateY(6px);
+    }
+
+    .signin {
+      position: relative;
+      z-index: -1;
+      mix-blend-mode: normal;
     }
   }
 
@@ -74,6 +84,7 @@ $text-light: #fffdff;
       width: 100px;
       padding: 10px;
       border-radius: 100vw;
+      
     }
   }
 }

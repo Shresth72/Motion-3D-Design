@@ -66,9 +66,9 @@ const SignUpPage = () => {
     <div className="signup-container">
       
       <SignUp
-        path="/signup"
+        path="/sign-up"
         routing="path"
-        signInUrl="/signin"
+        signInUrl="/sign-in"
         redirectUrl="/"
       />
     </div>

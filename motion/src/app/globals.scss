@@ -30,9 +30,15 @@ body {
 }
 
 @font-face {
-  font-family: "Afrah", sans-serif;
-  src: url("../../public/Afrah-Bold.ttf");
+  font-family: "Akira", sans-serif;
+  src: url("../../public/Akira-Bold.otf");
 }
+
+@font-face {
+  font-family: "AkiraExtra", sans-serif;
+  src: url("../../public/AkiraExtra.otf");
+}
+
 
 button {
   padding: 15px 20px;

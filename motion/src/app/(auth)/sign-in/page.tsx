@@ -52,7 +52,7 @@ export default async function SignInPage() {
         <CardFooter>
           <div>
             <span>Don&apos;t have an account?</span>
-            <Link aria-label="Sign up" href="/signup" className="">
+            <Link aria-label="Sign up" href="/sign-up" className="">
               Sign up
             </Link>
           </div>
