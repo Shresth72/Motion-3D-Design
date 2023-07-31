@@ -1,22 +1,22 @@
 export const data = [
   {
     id: "info_1",
-    title: "Number Nook",
-    storage: "Unraveling the Wonders of Numbers",
+    title: "Sequence and Flow",
+    storage: "Keeping the audience engaged.",
   },
   {
     id: "info_2",
-    title: "Mathematical Puzzlers",
-    storage: "Challenge Your Mind with Mind-Boggling Math Puzzles",
+    title: "Symbolism and Metaphor",
+    storage: "Visual cues to convey deeper meanings or abstract concepts",
   },
   {
     id: "info_3",
-    title: "Math-o-Mania",
-    storage: "Step Right Up to a Fun-Filled Math Carnival",
+    title: "Authenticity and Relatability",
+    storage: "A sense of connection",
   },
   {
     id: "info_4",
-    title: "Real-Life Math Explorations",
-    storage: "Experience Math Beyond the Classroom",
+    title: "Simplification and Clarity",
+    storage: "Simplify complex ideas and concepts",
   },
 ];

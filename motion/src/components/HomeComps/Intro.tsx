@@ -1,15 +1,12 @@
 "use client";
-import Scene from "../CanvasComps/number-canvas";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";
-import { Mesh } from "three";
 import "../../styles/Home.scss";
-import Spline from "@splinetool/react-spline";
+import Link from "next/link";
 
 const Intro = () => {
-  const machineRef = useRef<Mesh>(null!);
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
@@ -41,10 +38,32 @@ const Intro = () => {
           translateY: 0,
           scrollTrigger: {
             trigger: ".intro-container",
-            start: "clamp(bottom-=400 bottom)",
+            start: "clamp(bottom-=600 bottom)",
             scrub: 2,
           },
         });
+
+      gsap.from(".line", {
+        width: 0,
+        scrollTrigger: {
+          trigger: ".line",
+        },
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".intro-bg",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      gsap.utils.toArray<HTMLElement>(".parallax").forEach((layer) => {
+        const speed = layer.dataset.speed;
+        const movement = -(layer.offsetHeight * Number(speed)); // Convert speed to a number
+        tl.to(layer, { y: movement, ease: "none" }, 0);
+      });
     });
 
     return () => ctx.revert();
@@ -54,25 +73,33 @@ const Intro = () => {
     <div className="intro-container">
       <div className="intro-wrapper">
         <div className="intro-bg"></div>
-        <h1 className="top">
+        <h1 className="top " data-speed={2}>
           Where art and motion converge to create a{" "}
           <span>
             symphony<span className="line"></span>
           </span>{" "}
           of visual marvels!
         </h1>
-        <h1 className="series">
-        Our talented team brings{" "}
+        <h1 className="series  parallax" data-speed={3}>
+          Explore the artistry of motion, and{" "}
           <span>
-          ideas<span className="line"></span>
+            unleash<span className="line"></span>
           </span>{" "}
-          to life.
+          your creativity
         </h1>
-        <div className="machine">
+        <div className="machine  parallax">
           {/* <Spline scene="https://prod.spline.design/LgzlHFhdPkBFudR5/scene.splinecode" /> */}
         </div>
-        <h1>Explore successful ad campaigns that leverage the magic of motion design to stand out in a crowded market.</h1>
-        
+        <h1 data-speed={3} className=" third parallax">
+          Explore successful ad campaigns that leverage the magic of motion
+          design to stand out in a crowded market.
+        </h1>
+      </div>
+      <div className="parallax-group">
+        <Link href="/" className="projects"></Link>
+        <Link href="/" className="projects"></Link>
+        <Link href="/" className="projects"></Link>
+        <Link href="/" className="projects"></Link>
       </div>
     </div>
   );

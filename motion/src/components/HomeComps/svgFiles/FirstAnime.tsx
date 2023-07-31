@@ -94,8 +94,8 @@ const FirstAnime: FC<FirstAnimeProps> = ({}) => {
         />
       </svg>
       <div className="animation-text">
-        <h1>Manage Workflow</h1>
-        <p>Track samples and manage your runs with manual or automated LIMS</p>
+        <h1>The Art of Visual Symphony</h1>
+        <p>Drawing parallels with a symphony, where every element dances in harmony to create a captivating visual experience.</p>
         <p className="title-1">1</p>
       </div>
     </div>

@@ -12,14 +12,7 @@ const Info = () => {
       gsap.registerPlugin(ScrollTrigger);
       gsap.defaults({ duration: 2 });
 
-      // gsap.to(".info-container", {
-      //   y: -900,
-      //   scrollTrigger: {
-      //     trigger: ".intro-container",
-      //     start: "clamp(bottom-=300 bottom)",
-      //     scrub: 1,
-      //   },
-      // });
+      
     });
 
     return () => ctx.revert();
@@ -28,7 +21,7 @@ const Info = () => {
   return (
     <div className="info-container">
       <div className="wrapper">
-        <h1>Topics</h1>
+        <h1>Visual Storytelling</h1>
         <div className="list">
           {data.map((info) => (
             <div key={info.id}>

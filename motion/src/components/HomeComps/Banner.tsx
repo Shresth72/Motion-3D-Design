@@ -27,6 +27,13 @@ const Banner = () => {
         }
       });
 
+      gsap.from(".banner-line", {
+        width: 0,
+        scrollTrigger: {
+          trigger: ".banner-line",
+        },
+      });
+
     });
 
     return () => ctx.revert();
@@ -42,16 +49,16 @@ const Banner = () => {
           <path d="M567.27 267.179C325.796 109.936 88.221 -18.0429 0 8.84968V267.179H1284V8.84968C1078.51 -46.3276 822.799 198.805 720.629 267.179C713.041 251.887 699.549 203.902 643.897 200C599.376 196.878 574.262 243.485 567.27 267.179Z" />
         </svg>
 
-        <div className="logo">Ns</div>
+        <div className="logo">Ms</div>
         <div className="text">
           <h1>
-            Gain access to cutting-edge genome{" "}
+            Gain access to our cutting-edge exculsive{" "}
             <span>
-              sequencing<span className="line"></span>
+              service<span className="banner-line line"></span>
             </span>{" "}
-            technologies
+            by subscribing to pro!
           </h1>
-          <Button className={""}>Sign up for testing</Button>
+          <Button className={""}>Sign up to pro</Button>
           <p>learn more</p>
         </div>
       </div>

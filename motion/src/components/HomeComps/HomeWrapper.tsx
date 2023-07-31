@@ -5,6 +5,9 @@ import { FC, useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Spline from "@splinetool/react-spline";
+import Image from "next/image";
+
+import authh from "../../../public/images/auth-layout.png";
 
 interface HomeWrapperProps {}
 
@@ -75,7 +78,7 @@ const HomeWrapper: FC<HomeWrapperProps> = ({}) => {
       <div className="logo-wrapper">
         <svg
           className="logo"
-          id="Layer_1"
+          id="Layer_2"
           data-name="Layer 1"
           viewBox="0 0 1059.94 1418.08"
         >
@@ -144,7 +147,7 @@ const HomeWrapper: FC<HomeWrapperProps> = ({}) => {
       </div>
       <svg
         className="home-svg-right"
-        id="Layer_1"
+        id="Layer_3"
         data-name="Layer 1"
         viewBox="0 0 686.01 1733.39"
       >
