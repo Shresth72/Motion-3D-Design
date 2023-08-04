@@ -61,8 +61,8 @@ const SecondAnime: FC<SecondAnimeProps> = ({}) => {
       </svg>
       <div className="animation-text-second">
         <p className="title-2">2</p>
-        <h1>Prepare Libraries</h1>
-        <p>Access a broad range of high performance library preparation kits</p>
+        <h1>Motion Design for Brand Tsunamis</h1>
+        <p>Emphasize the potential of motion graphics to leave a lasting impression on consumers and elevate brand visibility.</p>
       </div>
     </div>
   );

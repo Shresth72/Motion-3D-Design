@@ -15,7 +15,6 @@ $width: calc(100vw / 4.5);
 $text-dark: #2c182d;
 $bubble: #ede3f6;
 
-//2
 $text-200: #f4f4f8;
 $background-200: #020203;
 $primary-200: #0e0e14;
@@ -47,8 +46,6 @@ $accent-100: #12121a;
     justify-content: center;
     gap: 2vw;
 
-    
-
     .header {
       font-size: 40px;
       margin-top: 8px;
@@ -75,12 +72,8 @@ $accent-100: #12121a;
       .cls-1 {
         fill: #f4f4f8;
         transition: all 0.3s;
-
-        
       }
     }
-
-    
 
     .home-svg-right {
       aspect-ratio: 9/19;
@@ -128,7 +121,6 @@ $accent-100: #12121a;
       .home-svg-left,
       .home-svg-right {
         display: none;
-
       }
 
       .logo-wrapper {
@@ -180,7 +172,6 @@ $accent-100: #12121a;
     background: transparent;
 
     .parallax-group {
-
       .projects {
         aspect-ratio: 2/1.2;
         width: 200px;
@@ -214,8 +205,6 @@ $accent-100: #12121a;
           scale: 1.1;
         }
       }
-
-    
     }
 
     .intro-wrapper {
@@ -226,7 +215,6 @@ $accent-100: #12121a;
 
       text-align: center;
 
-     
       .intro-bg {
         position: absolute;
         z-index: 1;
@@ -248,7 +236,8 @@ $accent-100: #12121a;
         // transform: translateX(-180px) translateY(-50px);
       }
 
-      .top, .series {
+      .top,
+      .series {
         margin-bottom: 150px;
       }
 
@@ -261,8 +250,6 @@ $accent-100: #12121a;
         z-index: 3;
         max-width: 360px;
         font-size: 28px;
-        
-        
 
         span {
           position: relative;
@@ -541,10 +528,18 @@ $accent-100: #12121a;
           stroke-miterlimit: 10;
           stroke-linecap: round;
           stroke-width: 4;
+          transition: all 0.3s;
         }
         .cls-2 {
           fill: $text-200;
           stroke-linecap: round;
+          position: relative;
+          z-index: 100;
+          transition: all 0.3s;
+
+          &:hover {
+            fill: $background-200;
+          }
         }
 
         .animation-text {
@@ -556,7 +551,7 @@ $accent-100: #12121a;
           position: absolute;
           bottom: 0;
           max-width: 350px;
-          transform: translateY(-633px);
+          transform: translateY(-700px);
           text-align: center;
 
           h1 {
@@ -572,6 +567,7 @@ $accent-100: #12121a;
             bottom: 0;
             color: $background-200;
             font-size: 1.5rem;
+            pointer-events: none;
           }
         }
       }
@@ -582,6 +578,7 @@ $accent-100: #12121a;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background: $background-200;
 
         svg {
           stroke: $dark-grad-100;
@@ -601,18 +598,22 @@ $accent-100: #12121a;
           align-items: center;
           flex-direction: column;
           margin-top: 60px;
-          gap: 10px;
+          gap: 10px;max-width: 500px;
 
           text-align: center;
 
           h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
+            max-width: 800px;
+          }
+          p{
+            font-size: 0.8rem;
           }
 
           .title-2 {
             position: absolute;
             font-size: 1.5rem;
-            transform: translateY(-163px);
+            transform: translateY(-192px);
           }
         }
       }
