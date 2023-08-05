@@ -8,9 +8,12 @@ import HomeWrapper from "@/components/HomeComps/HomeWrapper";
 
 import { currentUser } from "@clerk/nextjs";
 import Navbar from "@/components/HomeComps/Navbar";
+import { db } from "@/lib/db";
 
 export default async function Home() {
   const user = await currentUser();
+
+  
 
   return (
     <>

@@ -27,24 +27,26 @@ export default async function SignInPage() {
   const user = await currentUser();
 
   if (user) {
-    const emailUser =
-      user?.emailAddresses?.find((e) => e.id === user.primaryEmailAddressId)
-        ?.emailAddress ?? "";
+    if (user) {
+      const emailUser =
+        user?.emailAddresses?.find((e) => e.id === user.primaryEmailAddressId)
+          ?.emailAddress ?? "";
 
-    const dbUser = await db?.user.findFirst({
-      where: {
-        email: emailUser as string,
-      },
-    });
-
-    if (!dbUser) {
-      const newUser = await db?.user.create({
-        data: {
+      const dbUser = await db?.user.findFirst({
+        where: {
           id: user.id as string,
-          name: user.firstName as string,
-          email: emailUser,
         },
       });
+
+      if (!dbUser) {
+        const newUser = await db?.user.create({
+          data: {
+            id: user.id as string,
+            name: user.firstName as string,
+            email: emailUser,
+          },
+        });
+      }
     }
 
     redirect("/");
