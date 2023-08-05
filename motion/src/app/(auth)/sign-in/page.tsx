@@ -16,14 +16,39 @@ import {
 import { Shell } from "@/components/shells/shell";
 import { OAuthSignIn } from "@/components/auth/oauth-signin";
 import { SignInForm } from "@/components/forms/signin-form";
+import { db } from "@/lib/db";
 
 export const metadata: Metadata = {
   title: "Sign In",
   description: "Sign in to your account",
 };
+
 export default async function SignInPage() {
   const user = await currentUser();
-  if (user) redirect("/");
+
+  if (user) {
+    const emailUser =
+      user?.emailAddresses?.find((e) => e.id === user.primaryEmailAddressId)
+        ?.emailAddress ?? "";
+
+    const dbUser = await db?.user.findFirst({
+      where: {
+        email: emailUser as string,
+      },
+    });
+
+    if (!dbUser) {
+      const newUser = await db?.user.create({
+        data: {
+          id: user.id as string,
+          name: user.firstName as string,
+          email: emailUser,
+        },
+      });
+    }
+
+    redirect("/");
+  }
 
   return (
     <Shell className="signin-container">

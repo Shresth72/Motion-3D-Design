@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { Button } from "../ui/buttonSlot";
 import { Icons } from "../ui/icons";
 import "../../styles/SignIn.scss";
+import { db } from "@/lib/db";
 
 const oauthProviders = [
   { name: "Google", strategy: "oauth_google", icon: "google" },
@@ -32,6 +33,8 @@ export function OAuthSignIn() {
         redirectUrl: "/sso-callback",
         redirectUrlComplete: "/",
       });
+
+      
     } catch (error) {
       setIsLoading(null);
 

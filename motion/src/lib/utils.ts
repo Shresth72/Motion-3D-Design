@@ -1,9 +1,6 @@
-
 import { isClerkAPIResponseError } from "@clerk/nextjs";
 import { toast } from "sonner";
 import * as z from "zod";
-
-
 
 export function catchClerkError(err: unknown) {
   const unknownErr = "Something went wrong, please try again later.";
@@ -18,4 +15,10 @@ export function catchClerkError(err: unknown) {
   } else {
     return toast.error(unknownErr);
   }
+}
+
+export function absoluteUrl(path: string) {
+  return `${
+    process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000/"
+  }${path}`;
 }

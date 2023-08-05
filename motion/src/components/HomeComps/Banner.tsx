@@ -5,6 +5,7 @@ import Button from "../ui/buttonPurple";
 import { gsap } from "gsap";
 import "../../styles/Home.scss";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Link from "next/link";
 
 const Banner = () => {
   useEffect(() => {
@@ -24,7 +25,7 @@ const Banner = () => {
           start: "clamp(center bottom)",
           end: "clamp(bottom center)",
           scrub: 2,
-        }
+        },
       });
 
       gsap.from(".banner-line", {
@@ -33,7 +34,6 @@ const Banner = () => {
           trigger: ".banner-line",
         },
       });
-
     });
 
     return () => ctx.revert();
@@ -58,7 +58,10 @@ const Banner = () => {
             </span>{" "}
             by subscribing to pro!
           </h1>
-          <Button className={""}>Sign up to pro</Button>
+          <Link href="/billing">
+            <Button className={""}>Check Plans</Button>
+          </Link>
+
           <p>learn more</p>
         </div>
       </div>
