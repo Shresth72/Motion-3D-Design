@@ -1,46 +1,49 @@
+import { storeSubscriptionPlans } from "@/config/subscriptions";
 import { currentUser } from "@clerk/nextjs";
 import { db } from "./db";
-import { storeSubscriptionPlans } from "@/config/subscriptions";
 import { stripe } from "./stripe";
-import { toast } from "sonner";
 
 export async function getUserSubscriptionPlan() {
   const clerkUser = await currentUser();
-  if (!clerkUser) throw new Error("User not found!");
 
-  const dbUser = await db?.user.findFirst({
+  if (!clerkUser) {
+    throw new Error("User not found.");
+  }
+
+  const user = await db?.user.findFirst({
     where: {
-      id: clerkUser.id as string,
+      id: clerkUser.id,
     },
   });
 
-  if (!dbUser) throw new Error("No user found!");
+  if (!user) {
+    throw new Error("User not found.");
+  }
 
   const isSubscribed =
-    dbUser.stripePriceId &&
-    dbUser.stripeCurrentPeriodEnd &&
-    dbUser.stripeCurrentPeriodEnd.getTime() + 87_400_000 > Date.now();
+    user.stripePriceId &&
+    user.stripeCurrentPeriodEnd &&
+    user.stripeCurrentPeriodEnd.getTime() + 86_400_000 > Date.now();
 
   const plan = isSubscribed
     ? storeSubscriptionPlans.find(
-        (p) => p.stripePriceId === dbUser.stripePriceId
-      )
+      (plan) => plan.stripePriceId === user.stripePriceId,
+    )
     : null;
 
   let isCanceled = false;
-  if (isSubscribed && dbUser.stripeSubscriptionId) {
+  if (isSubscribed && user.stripeSubscriptionId) {
     const stripePlan = await stripe.subscriptions.retrieve(
-      dbUser.stripeSubscriptionId
+      user.stripeSubscriptionId,
     );
-
     isCanceled = stripePlan.cancel_at_period_end;
   }
 
   return {
     ...plan,
-    stripeSubscriptionId: dbUser.stripeSubscriptionId,
-    stripeCurrentPeriod: dbUser.stripeCurrentPeriodEnd,
-    stripeCustomerId: dbUser.stripeCustomerId,
+    stripeSubscriptionId: user.stripeSubscriptionId,
+    stripeCurrentPeriodEnd: user.stripeCurrentPeriodEnd,
+    stripeCustomerId: user.stripeCustomerId,
     isSubscribed,
     isCanceled,
   };

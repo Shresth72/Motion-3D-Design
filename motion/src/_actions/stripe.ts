@@ -1,37 +1,34 @@
-"use server"
+"use server";
 
 import { stripe } from "@/lib/stripe";
 import { absoluteUrl } from "@/lib/utils";
 
-interface manageStripeSubscriptionActionProps {
+interface ManageStripeSubscriptionActionProps {
   isSubscribed: boolean;
-  stripeCustomerId: string | null;
+  stripeCustomerId?: string | null;
   isCurrentPlan: boolean;
-  email: string;
   stripePriceId: string;
+  email: string;
   userId: string;
 }
 
 export const manageStripeSubscriptionAction = async ({
   isSubscribed,
-  isCurrentPlan,
   stripeCustomerId,
-  email,
+  isCurrentPlan,
   stripePriceId,
+  email,
   userId,
-}: manageStripeSubscriptionActionProps) => {
+}: ManageStripeSubscriptionActionProps) => {
   const billingUrl = absoluteUrl("/billing");
 
-  //if subscribed
-  if (isSubscribed && isCurrentPlan && stripeCustomerId) {
+  if (isSubscribed && stripeCustomerId && isCurrentPlan) {
     const stripeSession = await stripe.billingPortal.sessions.create({
       customer: stripeCustomerId,
       return_url: billingUrl,
     });
 
-    return {
-      url: stripeSession.return_url,
-    };
+    return { url: stripeSession.url };
   }
 
   const stripeSession = await stripe.checkout.sessions.create({
@@ -52,7 +49,5 @@ export const manageStripeSubscriptionAction = async ({
     },
   });
 
-  return {
-    url: stripeSession.url,
-  };
+  return { url: stripeSession.url };
 };

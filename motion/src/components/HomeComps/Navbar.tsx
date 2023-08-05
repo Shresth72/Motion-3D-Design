@@ -17,6 +17,8 @@ const Navbar: FC<NavbarProps> = ({ user }) => {
     user?.emailAddresses?.find((e) => e.id === user.primaryEmailAddressId)
       ?.emailAddress ?? "";
 
+  
+
   return (
     <div className="nav-wrapper">
       <div className="nav-logo">
