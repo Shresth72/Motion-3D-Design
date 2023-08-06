@@ -35,8 +35,8 @@ export default async function Billing() {
             : subscriptionPlan.isCanceled
             ? "Your plan will be canceled on "
             : "Your plan renews on "}
-          {subscriptionPlan?.stripeCurrentPeriod
-            ? subscriptionPlan.stripeCurrentPeriod.toLocaleDateString()
+          {subscriptionPlan?.stripeCurrentPeriodEnd
+            ? subscriptionPlan.stripeCurrentPeriodEnd.toLocaleDateString()
             : null}
         </p>
       </Card>
