@@ -36,7 +36,7 @@ export default authMiddleware({
     if (!auth.userId) {
       //  If user tries to access a private route without being authenticated,
       //  redirect them to the sign in page
-      url.pathname = "/signin";
+      url.pathname = "/sign-in";
       return NextResponse.redirect(url);
     }
 
